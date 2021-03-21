@@ -41,6 +41,9 @@ import boostConnectionIconURL from './boost/boost-illustration.svg';
 import boostConnectionSmallIconURL from './boost/boost-small.svg';
 import boostConnectionTipIconURL from './boost/boost-button-illustration.svg';
 
+import myblockImage from './myblock/mB.jpg';
+import myblockButtonImage from './myblock/mB-small.png';
+
 import gdxforIconURL from './gdxfor/gdxfor.png';
 import gdxforInsetIconURL from './gdxfor/gdxfor-small.svg';
 import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
@@ -257,6 +260,26 @@ export default [
         ),
         helpLink: 'https://scratch.mit.edu/boost'
     },
+
+    {
+        name: 'Task1',
+        extensionId: 'myblock',
+        collaborator: 'Gautam Rizwani',
+        iconURL: myblockImage,
+        insetIconURL: myblockButtonImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Square and Square Root"
+                description="Custom Square and Square Root blocks"
+                id="gui.extension.newblocks.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        internetConnectionRequired: false,
+        bluetoothRequired: false
+    },
+
     {
         name: 'LEGO Education WeDo 2.0',
         extensionId: 'wedo2',

@@ -671,7 +671,14 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
-        <block type="operator_round">
+        <block type="operator_square">
+            <value name="NUM">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_squareroot">
             <value name="NUM">
                 <shadow type="math_number">
                     <field name="NUM"/>

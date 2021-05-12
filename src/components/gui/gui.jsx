@@ -23,6 +23,7 @@ import BackdropLibrary from '../../containers/backdrop-library.jsx';
 import Watermark from '../../containers/watermark.jsx';
 
 import Backpack from '../../containers/backpack.jsx';
+import Task6Modal from '../../containers/task6-modal.jsx';
 import WebGlModal from '../../containers/webgl-modal.jsx';
 import TipsLibrary from '../../containers/tips-library.jsx';
 import Cards from '../../containers/cards.jsx';
@@ -173,7 +174,7 @@ const GUIComponent = props => {
                 ) : null}
                 {loading ? (
                     <Loader />
-                ) : null}
+                ) : <Task6Modal/>}
                 {isCreating ? (
                     <Loader messageId="gui.loader.creating" />
                 ) : null}

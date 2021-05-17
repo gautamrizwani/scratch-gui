@@ -2,10 +2,10 @@ import classNames from 'classnames';
 import omit from 'lodash.omit';
 import PropTypes from 'prop-types';
 import React from 'react';
-import {defineMessages, FormattedMessage, injectIntl, intlShape} from 'react-intl';
-import {connect} from 'react-redux';
+import { defineMessages, FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { connect } from 'react-redux';
 import MediaQuery from 'react-responsive';
-import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import tabStyles from 'react-tabs/style/react-tabs.css';
 import VM from 'scratch-vm';
 import Renderer from 'scratch-render';
@@ -22,8 +22,8 @@ import CostumeLibrary from '../../containers/costume-library.jsx';
 import BackdropLibrary from '../../containers/backdrop-library.jsx';
 import Watermark from '../../containers/watermark.jsx';
 
+import Task6Modal from '../task6-modal/task6-modal.jsx';
 import Backpack from '../../containers/backpack.jsx';
-import Task6Modal from '../../containers/task6-modal.jsx';
 import WebGlModal from '../../containers/webgl-modal.jsx';
 import TipsLibrary from '../../containers/tips-library.jsx';
 import Cards from '../../containers/cards.jsx';
@@ -32,8 +32,8 @@ import DragLayer from '../../containers/drag-layer.jsx';
 import ConnectionModal from '../../containers/connection-modal.jsx';
 import TelemetryModal from '../telemetry-modal/telemetry-modal.jsx';
 
-import layout, {STAGE_SIZE_MODES} from '../../lib/layout-constants';
-import {resolveStageSize} from '../../lib/screen-utils';
+import layout, { STAGE_SIZE_MODES } from '../../lib/layout-constants';
+import { resolveStageSize } from '../../lib/screen-utils';
 
 import styles from './gui.css';
 import addExtensionIcon from './icon--extensions.svg';
@@ -91,6 +91,8 @@ const GUIComponent = props => {
         loading,
         logo,
         renderLogin,
+        onOpenTask6Modal,
+        onCloseTask6Modal,
         onClickAbout,
         onClickAccountNav,
         onCloseAccountNav,
@@ -174,7 +176,11 @@ const GUIComponent = props => {
                 ) : null}
                 {loading ? (
                     <Loader />
-                ) : <Task6Modal/>}
+                ) : null}
+
+                {task6Visible ? (
+                    <Task6Modal />
+                ) : null}
                 {isCreating ? (
                     <Loader messageId="gui.loader.creating" />
                 ) : null}
